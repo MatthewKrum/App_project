@@ -1,0 +1,20 @@
+<h1>All Players</h1>
+<table class="table">
+    <tr>
+        <th>Player Name</th>
+        <th>Position</th>
+        <th>Number</th>
+        <th></th>
+    </tr>
+    <%@players.each do |player|%>
+    
+    <tr>
+        <td><%=player.first_name%> <%=player.last_name%></td>
+        <td><%=player.position%></td>
+        <td><%=player.number%></td>
+        <td><%=link_to 'edit', edit_player_path(player)%>
+         <%= link_to 'Delete', player_path(player), method: :delete, data: { confirm: "Are you sure you want to delete #{player.first_name}?" } %>
+        </td>
+    </tr>
+    <% end %>
+</table>

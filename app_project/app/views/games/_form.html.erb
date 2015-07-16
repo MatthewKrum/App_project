@@ -1,0 +1,21 @@
+<%= form_for @game do |f| %>
+    <p>
+            <%= f.label :date %>
+           <%= f.date_select :date, order: [:month, :day, :year], start_year: 1900, :class => 'form_control' %>
+    </p>
+     <p>
+            <%= f.label :field %>
+            <%= f.text_field :field, :class => 'form-control'%>
+    </p>
+    <p>
+        <%= f.label :home_team %>
+        <%= f.text_field :home_team, :class => 'form-control'%>
+    </p>
+    <p>
+        <%= f.label :away_team %>
+        <%= f.text_field :away_team, :class => 'form-control'%>
+    </p>
+    <p>
+        <%= f.submit%>
+    </p>
+<% end %>

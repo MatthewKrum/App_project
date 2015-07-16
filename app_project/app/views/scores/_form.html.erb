@@ -1,0 +1,18 @@
+<%= form_for [@game,@score] do |f| %>
+<div class="form-group">
+        <%= f.label :player_id %>
+        <br>
+        <%= f.select :player_id, Player.all.collect { |a| [a.first_name, a.id] }, :class => 'form-control' %>
+    </div>
+    <p>
+            <%= f.label :assist_or_goal %>
+           <%= f.select :assist_or_goal, { score: 'Score', assist: 'Assist' }, :class => 'form_control' %>
+    </p>
+     <p>
+            <%= f.label :time %>
+            <%= f.text_field :time, :class => 'form-control'%>
+    </p>
+    <p>
+        <%= f.submit%>
+    </p>
+<% end %>

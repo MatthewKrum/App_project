@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150715200112) do
 
   create_table "players", force: :cascade do |t|
     t.string   "first_name"
-    t.string   "last_nane"
+    t.string   "last_name"
     t.integer  "number"
     t.string   "position"
     t.datetime "created_at", null: false
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 20150715200112) do
 
   create_table "scores", force: :cascade do |t|
     t.integer  "player_id"
-    t.integer  "games_id"
+    t.integer  "game_id"
     t.integer  "time"
     t.string   "assist_or_goal"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  add_index "scores", ["games_id"], name: "index_scores_on_games_id"
+  add_index "scores", ["game_id"], name: "index_scores_on_game_id"
   add_index "scores", ["player_id"], name: "index_scores_on_player_id"
 
 end

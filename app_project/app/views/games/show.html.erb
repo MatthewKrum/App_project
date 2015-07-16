@@ -1,0 +1,13 @@
+<h1><%= @game.home_team %> vs <%= @game.away_team %></h1>
+<p>Date: <%=@game.date%></p>
+<p>field: <%=@game.field%></p>
+<h2>scores</h2>
+<ul>
+    <% @game.scores.each do |score|%>
+    <li>
+        <%= score.player.first_name%> <%= score.player.last_name%>
+        <%= score.time%>th minute
+    </li>
+    <% end %>
+</ul>
+<p><%=link_to 'Add Score',new_game_score_path(@game)%></p>
